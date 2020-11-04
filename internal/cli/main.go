@@ -229,7 +229,7 @@ Database drivers: `+strings.Join(database.List(), ", ")+"\n", createUsage, gotoU
 		}
 
 		limit := -1
-		if flag.NArg() > 0 {
+		if flag.Arg(1) != "" {
 			n, err := strconv.ParseUint(flag.Arg(1), 10, 64)
 			if err != nil {
 				log.fatal("error: can't read limit argument N")
